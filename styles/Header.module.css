@@ -1,0 +1,17 @@
+
+.navbar1{
+    background-color: red !important;
+}
+
+.black, .link{
+    color: white !important;
+}
+
+.link{
+    font-size: 20px;
+}
+
+.link:hover {
+  text-decoration: underline !important;
+  color: black !important;
+}

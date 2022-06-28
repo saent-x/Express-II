@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 17 Trial Version - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="font-awesome.min.css" rel="stylesheet">
+<link href="Untitled1.css" rel="stylesheet">
+<link href="index.css" rel="stylesheet">
+<script src="jquery-3.6.0.min.js"></script>
+<script src="wb.panel.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="wwb17.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("#headerPanelMenu").panel({animate: true, animationDuration: 200, animationEasing: 'linear', dismissible: true, display: 'overlay', position: 'left', toggle: true});
+   $("#headerPanelMenu_markup ul li a").click(function(event)
+   {
+       $.panel.hide($("#headerPanelMenu_panel"));
+   });
+});
+</script>
+</head>
+<body>
+<a href="https://www.wysiwygwebbuilder.com" target="_blank"><img src="images/builtwithwwb17.png" alt="WYSIWYG Web Builder" style="position:absolute;left:441px;top:958px;margin: 0;border-width:0;z-index:250" width="88" height="31"></a>
+<div id="wb_header">
+<div id="header">
+<div class="row">
+<div class="col-1">
+<div id="wb_headerPanelMenu" style="display:inline-block;width:50px;height:53px;z-index:0;">
+<a href="#headerPanelMenu_markup" id="headerPanelMenu">
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+</a>
+<div id="headerPanelMenu_markup">
+<ul role="menu">
+   <li role="menuitem"><a href="#home" class="nav-link">Home</a></li>
+   <li role="menuitem"><a href="#about" class="nav-link">About</a></li>
+   <li role="menuitem"><a href="#projects" class="nav-link">Projects</a></li>
+   <li role="menuitem"><a href="#contact" class="nav-link">Contact</a></li>
+</ul>
+<div id="headerPanelMenu-footer">© WYSIWYG Web Builder 2018</div>
+</div>
+
+</div>
+</div>
+<div class="col-2">
+<div id="wb_headerBreadcrumb" style="display:inline-block;width:100%;z-index:1;vertical-align:top;">
+<ul id="headerBreadcrumb">
+<li><a href="#home">HOME</a></li>
+<li><a href="#about">ABOUT</a></li>
+<li><a href="#projects">PROJECTS</a></li>
+<li><a href="#contact">CONTACT</a></li>
+</ul>
+
+</div>
+</div>
+<div class="col-3">
+<input type="text" id="searchInput" style="display:none;width:185px;height:34px;z-index:2;" name="search" value="" spellcheck="false" placeholder="Search...">
+<div id="wb_searchClose" style="display:none;width:33px;height:35px;text-align:center;z-index:3;">
+<a href="#" onclick="ShowObjectWithEffect('searchInput', 0, 'slideright', 500);ShowObjectWithEffect('wb_searchClose', 0, 'fade', 1);ShowObjectWithEffect('wb_searchOpen', 1, 'fade', 1);return false;"><div id="searchClose"><i class="fa fa-times"></i></div></a>
+</div>
+<div id="wb_searchOpen" style="display:inline-block;width:33px;height:35px;text-align:center;z-index:4;">
+<a href="#" onclick="ShowObjectWithEffect('searchInput', 1, 'slideright', 500);ShowObjectWithEffect('wb_searchClose', 1, 'fade', 1);ShowObjectWithEffect('wb_searchOpen', 0, 'fade', 1);return false;"><div id="searchOpen"><i class="fa fa-search"></i></div></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
