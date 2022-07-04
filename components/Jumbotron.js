@@ -80,7 +80,6 @@ export default function Jumbotron() {
       showDots={true}
       autoPlay={true}
       autoPlaySpeed={7000}
-      responsive={responsive}
       ssr={true} // means to render carousel on server-side.
       infinite={true}
       keyBoardControl={true}

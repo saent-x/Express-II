@@ -10,13 +10,13 @@ import {
     TableCaption,
     TableContainer,
 } from '@chakra-ui/react';
+import styles from "../styles/General.module.css"
 
 export default function Timetable() {
     return (
         <div>
-            <Text fontSize='xl' style={{
+            <Text className={styles.pagetitle} fontSize='xl' style={{
                 fontWeight: 700,
-                fontSize: "20px",
                 lineHeight: "19px",
                 color: "#406777"
             }} mb={5}>Timetable</Text>

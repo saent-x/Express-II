@@ -206,7 +206,7 @@ export default function Header() {
             </Nav.Link>
             <Nav.Link
               className={styles.link}
-              onClick={() => router.push("/timetable")}
+              onClick={() => router.push("/")}
             >
               Timetable
             </Nav.Link>

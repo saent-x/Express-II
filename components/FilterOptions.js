@@ -1,15 +1,15 @@
 import { Text, Box, Select } from "@chakra-ui/react";
+import styles from "../styles/General.module.css";
 
 export default function FilterOptions() {
     return (
-        <div style={{paddingRight: "100px"}}>
-            <Text fontSize='xl' style={{
+        <div className={styles.filterContainer}>
+            <Text className={styles.pagetitle} fontSize='xl' style={{
                 fontWeight: 700,
-                fontSize: "20px",
                 lineHeight: "19px",
                 color: "#406777"
             }} mb={5}>Filter Options</Text>
-            <Box bg='rgba(64, 103, 119, 0.05)' style={{minWidth: "300px"}} pb={10} pt={10} pr={3} pl={3}>
+            <Box className={styles.filterBox} bg='rgba(64, 103, 119, 0.05)' pb={10} pt={10} pr={3} pl={3}>
                 <Select bg="white" placeholder='Select Operator'>
                     <option value='option1'>Option 1</option>
                     <option value='option2'>Option 2</option>

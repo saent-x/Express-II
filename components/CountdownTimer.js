@@ -1,4 +1,5 @@
 import { Image, Center, Text } from "@chakra-ui/react";
+import styles from "../styles/General.module.css";
 
 export default function CountdownTimer() {
     const timeCounter = () => (
@@ -31,20 +32,20 @@ export default function CountdownTimer() {
     );
 
     return (
-        <div style={{
+        <div className={styles.countdownTimerContainer} style={{
             display: "flex",
             flexDirection: "row",
             width: "100%",
-            height: "200px",
+            height: "100%",
             backgroundColor: "rgba(64, 103, 119, 0.05)",
             justifyContent: "space-between",
             flexWrap: "wrap"
         }}>
-            <div style={{
+            <div className={styles.countdownTimerInnerContainer} style={{
                 display: "flex",
                 flexDirection: "row",
             }}>
-                <Image style={{ alignSelf: "flex-start", marginRight: "30px" }} src="green 1.png" h="200px" mW="209.51px" />
+                <Image className={styles.countdownTimerImage} style={{ alignSelf: "flex-start", marginRight: "30px" }} src="green 1.png" mW="209.51px" />
                 <Center>
                     <div style={{
                         display: "flex",
@@ -66,9 +67,7 @@ export default function CountdownTimer() {
                 </Center>
             </div>
 
-            <div style={{
-                width: "444px",
-                height: "200px",
+            <div className={styles.countdownTimerBanner} style={{
                 display: "flex",
                 flexDirection: "column",
                 backgroundColor: "rgba(64, 103, 119, 0.05)"
@@ -78,9 +77,8 @@ export default function CountdownTimer() {
                     width: "100%",
                     backgroundColor: "#254387",
                 }}>
-                    <Text style={{
+                    <Text className={styles.countdownTimerBannerText} style={{
                         fontWeight: 700,
-                        fontSize: "20px",
                         lineHeight: "19px",
                         color: "#FFFFFF"
                     }}>Countdown to Next Game Draw</Text>

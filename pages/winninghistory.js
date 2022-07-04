@@ -11,20 +11,20 @@ import {
     TableContainer, Button
 } from '@chakra-ui/react';
 import Layout from "../components/Layout";
+import styles from "../styles/General.module.css"
 
 export default function WinningHistory() {
     const Filter = () => (
         <div>
-            <Text fontSize='xl' style={{
+            <Text className={styles.pagetitle} fontSize='xl' style={{
                 fontWeight: 700,
-                fontSize: "20px",
                 lineHeight: "19px",
                 color: "#406777"
             }} mb={5}>Filter Options</Text>
             <Box bg='rgba(64, 103, 119, 0.05)' pb={5} pt={5} pr={3} pl={3}>
-                <Flex direction="row" justifyContent="space-around">
-                    <Input pr="15px" w="30%" borderWidth="2px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='From' />
-                    <Input w="30%" borderWidth="2px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='To' />
+                <Flex className={styles.historyfilter} direction="row" justifyContent="space-around">
+                    <Input className={styles.historyfilterInput} pr="15px" w="30%" borderWidth="2px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='From' />
+                    <Input className={styles.historyfilterInput} w="30%" borderWidth="2px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='To' />
                     <div pr="15px" w="40%" style={{ display: "flex", flexDirection: "row" }}>
                         <Input mr="10px" borderWidth="2px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='search...' />
                         <Button bg='#254387' color="white">Search</Button>
@@ -38,9 +38,8 @@ export default function WinningHistory() {
 
     const GameTimetable = () => (
         <div>
-            <Text fontSize='xl' style={{
+            <Text className={styles.pagetitle}  fontSize='xl' style={{
                 fontWeight: 700,
-                fontSize: "20px",
                 lineHeight: "19px",
                 color: "#406777"
             }} mb={5}>Timetable</Text>
@@ -140,7 +139,7 @@ export default function WinningHistory() {
 
     return (
         <Layout>
-            <div style={{ padding: "50px", width: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
+            <div className={styles.layoutPadding} style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
                 <Filter />
                 <br />
                 <GameTimetable />

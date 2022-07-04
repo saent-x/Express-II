@@ -1,3 +1,18 @@
-.container{
-    position: fixed;
+.home {
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+@media (max-width: 600px) {
+    .home {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .timetable{
+        margin-top: 20px;
+    }
 }

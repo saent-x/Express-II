@@ -1,0 +1,233 @@
+.filterBox {
+    min-width: 300px;
+}
+
+.filterContainer {
+    padding-right: 100px;
+}
+
+.footer {
+    padding: 100px;
+    flex-direction: row;
+}
+
+.hotnumberImg {
+    align-self: flex-start;
+    margin-right: 30px;
+    height: 236px;
+    min-width: 234px;
+}
+
+.footerText {
+    width: 329px;
+}
+
+.hotnumberTextDisplay {}
+
+.hotnumberText {
+    font-size: 20px
+}
+
+.hotnumberText2 {
+    font-size: 20px
+}
+
+.hotnumberCircle {
+    height: 88px;
+    width: 88px;
+}
+
+.hotnumberBox {
+    height: 236px;
+    width: 100%;
+    padding: 30px;
+}
+
+.hotnumberCircleContainer {
+    margin: 24px;
+}
+
+.layoutPadding {
+    padding: 50px;
+}
+
+.unhide {
+    display: none !important;
+}
+
+.countdownTimerContainer {
+    height: 200px
+}
+
+.countdownTimerImage {
+    height: 200px;
+}
+
+.countdownTimerBanner {
+    width: 444px;
+    height: 200px;
+}
+
+.countdownTimerBannerText {
+    font-size: 20px;
+}
+
+.resultcardStack {
+    margin: 24px;
+}
+
+.resultcardText1 {
+    font-size: 20px;
+}
+
+.resultcardText2 {
+    font-size: 15px;
+}
+
+.resultcardText3 {
+    font-size: 10px;
+}
+
+.pagetitle{
+    font-size: 20px;
+}
+
+.ResultsGrid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ResultsGridItem{
+    flex: 0 0 33.333333%;
+}
+
+@media (max-width: 800px) {
+    .ResultsGrid{
+        justify-content: center;
+    }
+    .historyfilter{
+        flex-direction: column !important;
+    }
+
+    .historyfilterInput{
+        width: 100% !important;
+        margin-bottom: 5px;
+    }
+    .pagetitle{
+        font-size: 15px !important;
+    }
+
+    .resultcardText1 {
+        font-size: 15px !important;
+    }
+
+    .resultcardText2 {
+        font-size: 10px !important;
+    }
+
+    .resultcardText3 {
+        font-size: 7px;
+    }
+
+    .resultcardStack {
+        margin: 10px !important;
+    }
+
+    .resultcardBtn {
+        margin-top: 5px !important;
+    }
+
+    .countdownTimerBannerText {
+        font-size: 14px;
+    }
+
+    .countdownTimerBanner {
+        width: 100%;
+        height: 150px;
+    }
+
+    .countdownTimerContainer {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .countdownTimerInnerContainer {
+        margin-bottom: 10px;
+    }
+
+    .countdownTimerImage {
+        height: 150px;
+        width: 108px !important;
+    }
+
+    .layoutPadding {
+        padding: 10px;
+        padding-top: 20px;
+    }
+
+    .unhide {
+        display: block !important;
+    }
+
+    .hotnumberImg {
+        height: 150px;
+        min-width: 121px;
+        margin-right: 5px;
+    }
+
+    .hotnumberBox {
+        height: 150px;
+        padding: 5px;
+    }
+
+    .hide {
+        display: none !important;
+    }
+
+    .hotnumberCircleContainer {
+        flex-direction: column;
+        margin: 10px !important;
+    }
+
+    .hotnumberText {
+        font-size: 15px !important;
+    }
+
+    .hotnumberText2 {
+        font-size: 10px !important;
+    }
+
+    .hotnumberCircle {
+        height: 30px;
+        width: 30px;
+    }
+
+    .hotnumberTextDisplay {
+        display: none !important;
+    }
+
+    .filterBox {
+        width: 100%;
+    }
+
+    .filterContainer {
+        padding-right: 0px;
+    }
+
+    .footer {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footerMargin {
+        margin-bottom: 20px;
+    }
+
+    .footerText {
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+}
