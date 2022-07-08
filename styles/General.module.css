@@ -22,8 +22,6 @@
     width: 329px;
 }
 
-.hotnumberTextDisplay {}
-
 .hotnumberText {
     font-size: 20px
 }
@@ -44,7 +42,10 @@
 }
 
 .hotnumberCircleContainer {
-    margin: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 .layoutPadding {
@@ -85,7 +86,7 @@
 }
 
 .resultcardText3 {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .pagetitle{
@@ -98,14 +99,19 @@
     justify-content: space-between;
 }
 
-.ResultsGridItem{
-    flex: 0 0 33.333333%;
+.ResultCard{
+    width: 377.53px;
+    height: 246.46px;
 }
 
 @media (max-width: 800px) {
+    .ResultCard{
+        width: 100%;
+    }
     .ResultsGrid{
         justify-content: center;
     }
+
     .historyfilter{
         flex-direction: column !important;
     }
@@ -114,28 +120,15 @@
         width: 100% !important;
         margin-bottom: 5px;
     }
-    .pagetitle{
-        font-size: 15px !important;
-    }
 
-    .resultcardText1 {
-        font-size: 15px !important;
-    }
-
-    .resultcardText2 {
-        font-size: 10px !important;
-    }
-
-    .resultcardText3 {
-        font-size: 7px;
-    }
+    
 
     .resultcardStack {
         margin: 10px !important;
     }
 
     .resultcardBtn {
-        margin-top: 5px !important;
+        margin-top: 30px !important;
     }
 
     .countdownTimerBannerText {
@@ -158,7 +151,7 @@
 
     .countdownTimerImage {
         height: 150px;
-        width: 108px !important;
+        width: 150px !important;
     }
 
     .layoutPadding {
@@ -171,13 +164,13 @@
     }
 
     .hotnumberImg {
-        height: 150px;
-        min-width: 121px;
+        height: 180px;
+        min-width: 150px;
         margin-right: 5px;
     }
 
     .hotnumberBox {
-        height: 150px;
+        height: 180px;
         padding: 5px;
     }
 
@@ -186,8 +179,8 @@
     }
 
     .hotnumberCircleContainer {
-        flex-direction: column;
-        margin: 10px !important;
+        margin: 8px !important;
+        align-items: center;
     }
 
     .hotnumberText {
@@ -195,12 +188,12 @@
     }
 
     .hotnumberText2 {
-        font-size: 10px !important;
+        font-size: 13px !important;
     }
 
     .hotnumberCircle {
-        height: 30px;
-        width: 30px;
+        height: 50px;
+        width: 50px;
     }
 
     .hotnumberTextDisplay {

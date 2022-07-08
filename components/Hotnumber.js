@@ -29,7 +29,7 @@ export default function Hotnumber() {
                         }} mb={1}>Option A</Text>
                     </HStack>
                     <HStack w="100%">
-                        <Stack className={styles.hotnumberCircleContainer} direction={['row']}>
+                        <div w="100%" className={styles.hotnumberCircleContainer}>
                             <Center className={styles.hotnumberCircle} color="white" bg='#379A08' style={{ borderRadius: "100px" }}>
                                 1
                             </Center>
@@ -45,17 +45,17 @@ export default function Hotnumber() {
                             <Center className={styles.hotnumberCircle} color="white" bg='#379A08' style={{ borderRadius: "100px" }}>
                                 5
                             </Center>
-                        </Stack>
+                        </div>
                         <Spacer className={styles.hide} />
                         <Button className={styles.hide} color="white" bg='#254387' w="250px" h="70px" mt={10}>Play now</Button>
                     </HStack>
                     <Text className={styles.unhide} fontSize='xl' style={{
-                        fontWeight: 700,
                         fontSize: "14px",
                         lineHeight: "5px",
-                        color: "#27AAE1"
+                        color: "#27AAE1",
+                        margin: "5px"
                     }} mb={1}>00 days 00:13:54</Text>
-                    <Button className={styles.unhide} color="white" bg='#254387' w="150" h="30px" >Play now</Button>
+                    <Button className={styles.unhide} color="white" bg='#254387' w="90%" h="50px">Play now</Button>
                 </VStack>
             </Box>
         </Flex>

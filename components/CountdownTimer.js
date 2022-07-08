@@ -45,7 +45,7 @@ export default function CountdownTimer() {
                 display: "flex",
                 flexDirection: "row",
             }}>
-                <Image className={styles.countdownTimerImage} style={{ alignSelf: "flex-start", marginRight: "30px" }} src="green 1.png" mW="209.51px" />
+                <Image className={styles.countdownTimerImage} style={{ alignSelf: "flex-start", marginRight: "30px" }} src="green 1.png" />
                 <Center>
                     <div style={{
                         display: "flex",

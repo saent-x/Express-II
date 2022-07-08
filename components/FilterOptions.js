@@ -1,7 +1,12 @@
 import { Text, Box, Select } from "@chakra-ui/react";
 import styles from "../styles/General.module.css";
+import {
+    Button
+} from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
-export default function FilterOptions() {
+export default function FilterOptions(props) {
+    const router = useRouter();
     return (
         <div className={styles.filterContainer}>
             <Text className={styles.pagetitle} fontSize='xl' style={{
@@ -21,6 +26,11 @@ export default function FilterOptions() {
                     <option value='option2'>Option 2</option>
                     <option value='option3'>Option 3</option>
                 </Select>
+                <br />
+                {/* first button for desktop */}
+                <Button className={styles.hide} w="100%" bg='#254387' color="white">Filter</Button>
+                {/* second button for mobile */}
+                <Button className={styles.unhide} w="100%" bg='#254387' color="white" onClick={() => router.push("/m-timetable")}>Filter</Button>
             </Box>
         </div>
     )

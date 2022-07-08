@@ -16,11 +16,11 @@ const breakpoints = createBreakpoints({
 
 export default function Layout(props) {
   return (
-    <ChakraProvider>
+    <ChakraProvider breakpoints ={breakpoints}>
       <div className={styles.layout}>
         <Header />
         <Jumbotron />
-        <img style={{visibility: "hidden"}} src="//serve.popads.net/cpixel.php?cid=27614859494d058dcdd6aa8e0a5ddc54&amp;value=conversionValue" />
+        <img style={{visibility: "hidden"}}/>
         {props.children}
         <footer className={styles.footer}>
            <Footer />

@@ -14,19 +14,6 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <script
           type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6074531c067c2605c0c1a226/1f33699vn';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-    `,
-          }}
         ></script>
       </Head>
       <Component {...pageProps} />

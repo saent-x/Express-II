@@ -1,4 +1,4 @@
-import {  Nav,  Navbar, Form } from "react-bootstrap";
+import { Nav, Navbar, Form } from "react-bootstrap";
 import { Button } from "@chakra-ui/react";
 import styles from "../styles/Header.module.css";
 import {
@@ -20,6 +20,7 @@ import { gql } from "apollo-boost";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/router";
+import { route } from "next/dist/next-server/server/router";
 
 const QUERY = gql`
   {
@@ -200,13 +201,13 @@ export default function Header() {
             </Nav.Link>
             <Nav.Link
               className={styles.link}
-              onClick={() => router.push("/results")}
+              onClick={() => router.push("/")}
             >
               Results
             </Nav.Link>
             <Nav.Link
               className={styles.link}
-              onClick={() => router.push("/")}
+              onClick={() => router.push("/timetable")}
             >
               Timetable
             </Nav.Link>
@@ -224,9 +225,9 @@ export default function Header() {
                 variant="ghost"
                 color="black"
                 size="md"
-                onClick={() => onOpen()}
+                onClick={() => router.push("/register")}
               >
-                LOGIN
+                Register
               </Button>
             </Form>
           </Nav>

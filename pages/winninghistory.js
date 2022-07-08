@@ -12,8 +12,12 @@ import {
 } from '@chakra-ui/react';
 import Layout from "../components/Layout";
 import styles from "../styles/General.module.css"
+import genStyles from "../styles/General.module.css";
+import { useRouter } from "next/router";
 
 export default function WinningHistory() {
+    const router = useRouter();
+
     const Filter = () => (
         <div>
             <Text className={styles.pagetitle} fontSize='xl' style={{
@@ -23,12 +27,13 @@ export default function WinningHistory() {
             }} mb={5}>Filter Options</Text>
             <Box bg='rgba(64, 103, 119, 0.05)' pb={5} pt={5} pr={3} pl={3}>
                 <Flex className={styles.historyfilter} direction="row" justifyContent="space-around">
-                    <Input className={styles.historyfilterInput} pr="15px" w="30%" borderWidth="2px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='From' />
-                    <Input className={styles.historyfilterInput} w="30%" borderWidth="2px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='To' />
+                    <Input className={styles.historyfilterInput} pr="15px" w="30%" borderWidth="0.8px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='From' />
+                    <Input className={styles.historyfilterInput} w="30%" borderWidth="0.8px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='To' />
                     <div pr="15px" w="40%" style={{ display: "flex", flexDirection: "row" }}>
-                        <Input mr="10px" borderWidth="2px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='search...' />
-                        <Button bg='#254387' color="white">Search</Button>
+                        <Input borderWidth="0.8px" borderColor="#254387" color="#254387" bg="white" variant='outline' placeholder='search...' />
+                        <Button ml="10px" className={styles.hide} bg='#254387' color="white">Search</Button>
                     </div>
+                    <Button mt={3} className={styles.unhide} bg='#254387' color="white" onClick={() => router.push("/m-winninghistory")}>Search</Button>
 
                 </Flex>
 
@@ -38,7 +43,7 @@ export default function WinningHistory() {
 
     const GameTimetable = () => (
         <div>
-            <Text className={styles.pagetitle}  fontSize='xl' style={{
+            <Text className={styles.pagetitle} fontSize='xl' style={{
                 fontWeight: 700,
                 lineHeight: "19px",
                 color: "#406777"
@@ -142,7 +147,9 @@ export default function WinningHistory() {
             <div className={styles.layoutPadding} style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
                 <Filter />
                 <br />
-                <GameTimetable />
+                <div className={genStyles.hide}>
+                    <GameTimetable />
+                </div>
             </div>
         </Layout>
     )

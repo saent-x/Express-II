@@ -8,8 +8,11 @@ import InfoBanner from "../components/InfoBanner";
 import TimetableAndInfo from "../components/TimetableAndInfo";
 import Loading from "../components/LoadingScreen";
 import React, { useState } from "react";
-import Home from "../components/Home";
 import WinningHistory from "./winninghistory";
+import { Text, Grid, GridItem } from "@chakra-ui/react";
+import CountdownTimer from "../components/CountdownTimer";
+import ResultCard from "../components/ResultCard";
+import styles from "../styles/General.module.css";
 
 export default function Index() {
   const [done, setDone] = useState(false);
@@ -33,8 +36,27 @@ export default function Index() {
       {/* {!done ? <Loading /> : null} */}
       <div style={{ display: done ? "block" : "none" }}>
         <Layout>
-          <Home/>
-          {/* <WinningHistory/> */}
+          <div className={styles.layoutPadding} style={{ width: "100%", display: "flex", flexDirection: "column" }}>
+            <Text className={styles.pagetitle} fontSize='xl' style={{
+              fontWeight: 700,
+              lineHeight: "19px",
+              color: "#406777"
+            }} mb={5}>Latest Results {'>>'} Operator</Text>
+            <CountdownTimer />
+            <br />
+
+            <div className={styles.ResultsGrid}>
+              <ResultCard />
+              <ResultCard />
+              <ResultCard />
+              <ResultCard />
+              <ResultCard />
+              <ResultCard />
+              <ResultCard />
+              <ResultCard />
+              <ResultCard />
+            </div>
+          </div>          {/* <WinningHistory/> */}
           {/* <LotterySuscriptionTable />
           <BankcodeAdvert />
           <GameTimer />
