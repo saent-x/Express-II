@@ -14,6 +14,7 @@ import Link from "next/link";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { useBreakpointValue } from "@chakra-ui/react";
+import styles from "../styles/General.module.css";
 
 const QUERY = gql`
   {
@@ -91,10 +92,10 @@ export default function Jumbotron() {
       itemClass="carousel-item-padding-40-px"
     >
    
-      <Image src='/banner1.png' h="350px" w="100%"></Image>
-      <Image src='/banner2.png' h="350px" w="100%"></Image>
-      <Image src='/banner3.png' h="350px" w="100%"></Image>
-      <Image src='/banner4.png' h="350px" w="100%"></Image>
+      <Image className={styles.carouselImage} src='/banner1.png' w="100%"></Image>
+      <Image className={styles.carouselImage} src='/banner2.png' w="100%"></Image>
+      <Image className={styles.carouselImage} src='/banner3.png' w="100%"></Image>
+      <Image className={styles.carouselImage} src='/banner4.png' w="100%"></Image>
 
     </Carousel>
   );

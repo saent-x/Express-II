@@ -86,7 +86,7 @@
 }
 
 .resultcardText3 {
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .pagetitle{
@@ -104,7 +104,20 @@
     height: 246.46px;
 }
 
+.carouselImage{
+    height: 350px;
+}
+@media (max-width: 600px) {
+  .hotnumberCircle {
+      height: 30px;
+      width: 30px;
+  }
+}
+
 @media (max-width: 800px) {
+    .carouselImage{
+        height: 180px;
+    }
     .ResultCard{
         width: 100%;
     }
@@ -192,8 +205,8 @@
     }
 
     .hotnumberCircle {
-        height: 50px;
-        width: 50px;
+        height: 35px;
+        width: 35px;
     }
 
     .hotnumberTextDisplay {

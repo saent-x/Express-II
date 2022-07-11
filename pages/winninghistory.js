@@ -14,6 +14,8 @@ import Layout from "../components/Layout";
 import styles from "../styles/General.module.css"
 import genStyles from "../styles/General.module.css";
 import { useRouter } from "next/router";
+import WinningHistoryTableItem
+    from "../components/WinningHistoryTableItem";
 
 export default function WinningHistory() {
     const router = useRouter();
@@ -145,10 +147,28 @@ export default function WinningHistory() {
     return (
         <Layout>
             <div className={styles.layoutPadding} style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
-                <Filter />
-                <br />
                 <div className={genStyles.hide}>
+                    <Filter />
+                    <br />
                     <GameTimetable />
+                </div>
+                <div className={genStyles.unhide}>
+                    <Text style={{
+                        fontWeight: 800,
+                        lineHeight: "15px",
+                        color: "#186777"
+                    }} mb={5}>Winning History</Text>
+                    <Text style={{
+                        lineHeight: "10px",
+                        color: "#406777"
+                    }} mb="30px">1 - 20 of 58 Records</Text>
+                    <WinningHistoryTableItem />
+                    <WinningHistoryTableItem />
+                    <WinningHistoryTableItem />
+                    <WinningHistoryTableItem />
+                    <WinningHistoryTableItem />
+                    <WinningHistoryTableItem />
+                    <WinningHistoryTableItem />
                 </div>
             </div>
         </Layout>
