@@ -187,7 +187,7 @@ export default function Header() {
         <Navbar.Brand href="/">
           <img
             alt=""
-            src="/logo-a.png"
+            src="/logo.png"
             width="130"
             height="80"
             className="d-inline-block align-top"
