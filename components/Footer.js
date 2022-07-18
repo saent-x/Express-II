@@ -16,46 +16,15 @@ import {
   OrderedList,
   UnorderedList,
 } from '@chakra-ui/react'
-import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import styles from "../styles/General.module.css";
 
-const MotionImage = motion(Image);
-
-const QUERY = gql`
-  {
-    footerHeadline1 {
-      header
-      content
-    }
-    footerHeadline2 {
-      header
-      content
-    }
-    footerHeadline3 {
-      header
-      content
-    }
-    socials {
-      image {
-        url
-      }
-      link
-    }
-  }
-`;
-
 export default function Footer() {
-  const { loading, error, data } = useQuery(QUERY);
-  if (error) return "Error loading... contact Admin";
-  if (loading) return <h1>...</h1>;
 
   return (
     <div className={styles.hide}>
       <Flex className={styles.footer} bg="#254387" justifyContent="space-around" wrap={{ base: "wrap", md: "nowrap", lg: "nowrap" }}>
-        <Image className={styles.footerMargin} w={130} h={20} src="/logo-a.png"></Image>
+        <Image className={styles.footerMargin} w={240} h={100} src="/logo.png"></Image>
         <Text className={styles.footerText} fontSize='15px' color="white">Our role is simply to serve you better so that you can make better informed betting decisions for licenced operators.</Text>
         <div className={styles.footerMargin}>
           <UnorderedList styleType="none" color="white" fs="15px">

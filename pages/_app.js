@@ -9,14 +9,15 @@ import withGA from "next-ga";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
+
   return (
     <>
-      <Head>
-        <script
-          type="text/javascript"
-        ></script>
-      </Head>
-      <Component {...pageProps} />
+          <Head>
+            <script
+              type="text/javascript"
+            ></script>
+          </Head>
+          <Component {...pageProps} />
     </>
   );
 }

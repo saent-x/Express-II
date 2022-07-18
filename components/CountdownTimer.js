@@ -1,8 +1,51 @@
 import { Image, Center, Text } from "@chakra-ui/react";
 import styles from "../styles/General.module.css";
+import moment from "moment";
+import Countdown from "react-countdown";
 
-export default function CountdownTimer() {
-    const timeCounter = () => (
+export default function CountdownTimer({ data }) {
+    const filterCountdown = (gameTime) => {
+        const date = moment(gameTime, "hh:mm:ss").toDate().valueOf();
+
+        const now = Date.now();
+
+        const miliseconds_countdown = date - now;
+        return miliseconds_countdown < 0;
+    }
+
+    const getMilliseconds = (gameTime) => {
+        if (filterCountdown(gameTime))
+            return
+
+        const date = moment(gameTime).toDate().valueOf();
+        console.log(date);
+        const now = Date.now();
+
+        const miliseconds_countdown = date - now;
+        return now + miliseconds_countdown;
+    };
+
+    const renderer = ({ days, hours, minutes, seconds, completed }) => {
+        if (completed) {
+            // Render a completed state
+            return <>
+                {timeCounter("00", "day")}
+                {timeCounter("00", "hrs")}
+                {timeCounter("00", "mins")}
+                {timeCounter("00", "secs")}
+            </>;
+        } else {
+            // Render a countdown
+            return <>
+                {timeCounter(days, "day")}
+                {timeCounter(hours, "hrs")}
+                {timeCounter(minutes, "mins")}
+                {timeCounter(seconds, "secs")}
+            </>;
+        }
+    };
+
+    const timeCounter = (value, name) => (
         <div style={{
             borderRadius: "5px",
             backgroundColor: "rgba(64, 103, 119, 0.1)",
@@ -19,15 +62,14 @@ export default function CountdownTimer() {
                     fontSize: "23px",
                     lineHeight: "19px",
                     color: "#406777"
-                }} mb="3px">00</Text>
+                }} mb="3px">{value}</Text>
                 <Text style={{
                     fontWeight: "normal",
                     fontSize: "18px",
                     lineHeight: "19px",
                     color: "#406777"
-                }}>days</Text>
+                }}>{name}</Text>
             </div>
-
         </div>
     );
 
@@ -45,7 +87,7 @@ export default function CountdownTimer() {
                 display: "flex",
                 flexDirection: "row",
             }}>
-                <Image className={styles.countdownTimerImage} style={{ alignSelf: "flex-start", marginRight: "30px" }} src="green 1.png" />
+                <Image className={styles.countdownTimerImage} style={{ alignSelf: "flex-start", marginRight: "30px" }} src={data.image.url} />
                 <Center>
                     <div style={{
                         display: "flex",
@@ -56,13 +98,13 @@ export default function CountdownTimer() {
                             fontSize: "20px",
                             lineHeight: "19px",
                             color: "#406777"
-                        }} mb={5}>M - Special</Text>
+                        }} mb={5}>{data.name}</Text>
                         <Text style={{
                             fontWeight: "normal",
                             fontSize: "15px",
                             lineHeight: "19px",
                             color: "#406777"
-                        }} mb={5}>27th Aug, 2021 | 10:20 AM</Text>
+                        }} mb={5}>{moment(data.drawtime).format("Do MMMM, YYYY, h:mm a")}</Text>
                     </div>
                 </Center>
             </div>
@@ -87,10 +129,7 @@ export default function CountdownTimer() {
                     height: "100%",
                     width: "100%",
                 }}>
-                    {timeCounter()}
-                    {timeCounter()}
-                    {timeCounter()}
-                    {timeCounter()}
+                    <Countdown date={getMilliseconds(data.drawtime)} renderer={renderer} />
                 </Center>
             </div>
 

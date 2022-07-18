@@ -11,8 +11,10 @@ import {
     TableContainer,
 } from '@chakra-ui/react';
 import styles from "../styles/General.module.css"
+import moment from "moment";
 
-export default function Timetable() {
+export default function Timetable({ data }) {
+
     return (
         <div>
             <Text className={styles.pagetitle} fontSize='xl' style={{
@@ -23,63 +25,23 @@ export default function Timetable() {
 
             <TableContainer>
                 <Table variant='simple' w="60vw">
-                    <Thead h="60px">
+                    <Thead h="100px">
                         <Tr>
-                            <Th bg="#254387" color="white">GAME</Th>
-                            <Th bg="#254387" color="white">DAY</Th>
-                            <Th bg="#254387" color="white">CLOSING TIME</Th>
-                            <Th bg="#254387" color="white">DRAW TIME</Th>
+                            <Th fontSize="20px" bg="#254387" color="white">GAME</Th>
+                            <Th fontSize="20px" bg="#254387" color="white">DAY</Th>
+                            <Th fontSize="20px" bg="#254387" color="white">CLOSING TIME</Th>
+                            <Th fontSize="20px" bg="#254387" color="white">DRAW TIME</Th>
                         </Tr>
                     </Thead>
                     <Tbody>
-                        <Tr h="60px" bg='rgba(64, 103, 119, 0.05)'>
-                            <Td>MVAG MON</Td>
-                            <Td>Monday</Td>
-                            <Td>08.00 am</Td>
-                            <Td>08.00 am</Td>
+                        {data.timetables.map((x, i) =>
+                        (<Tr key={i} h="60px" bg='rgba(64, 103, 119, 0.05)'>
+                            <Td>{x.game}</Td>
+                            <Td>{x.day}</Td>
+                            <Td>{moment(x.drawTime).format("hh:mm a")}</Td>
+                            <Td>{moment(x.closingTime).format("hh:mm a")}</Td>
                         </Tr>
-                        <Tr h="60px" bg='rgba(64, 103, 119, 0.05)'>
-                            <Td>MVAG MON</Td>
-                            <Td>Monday</Td>
-                            <Td>08.00 am</Td>
-                            <Td>08.00 am</Td>
-                        </Tr>
-                        <Tr h="60px" bg='rgba(64, 103, 119, 0.05)'>
-                            <Td>MVAG MON</Td>
-                            <Td>Monday</Td>
-                            <Td>08.00 am</Td>
-                            <Td>08.00 am</Td>
-                        </Tr>
-                        <Tr h="60px" bg='rgba(64, 103, 119, 0.05)'>
-                            <Td>MVAG MON</Td>
-                            <Td>Monday</Td>
-                            <Td>08.00 am</Td>
-                            <Td>08.00 am</Td>
-                        </Tr>
-                        <Tr h="60px" bg='rgba(64, 103, 119, 0.05)'>
-                            <Td>MVAG MON</Td>
-                            <Td>Monday</Td>
-                            <Td>08.00 am</Td>
-                            <Td>08.00 am</Td>
-                        </Tr>
-                        <Tr h="60px" bg='rgba(64, 103, 119, 0.05)'>
-                            <Td>MVAG MON</Td>
-                            <Td>Monday</Td>
-                            <Td>08.00 am</Td>
-                            <Td>08.00 am</Td>
-                        </Tr>
-                        <Tr h="60px" bg='rgba(64, 103, 119, 0.05)'>
-                            <Td>MVAG MON</Td>
-                            <Td>Monday</Td>
-                            <Td>08.00 am</Td>
-                            <Td>08.00 am</Td>
-                        </Tr>
-                        <Tr h="60px" bg='rgba(64, 103, 119, 0.05)'>
-                            <Td>MVAG MON</Td>
-                            <Td>Monday</Td>
-                            <Td>08.00 am</Td>
-                            <Td>08.00 am</Td>
-                        </Tr>
+                        ))}
                     </Tbody>
                 </Table>
             </TableContainer>

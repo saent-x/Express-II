@@ -1,7 +1,7 @@
 import { Text } from "@chakra-ui/react";
 import styles from "../styles/General.module.css";
 
-export default function WinningHistoryTableItem() {
+export default function WinningHistoryTableItem({ data }) {    
     return (
         <div style={{
             width: "100%",
@@ -27,7 +27,7 @@ export default function WinningHistoryTableItem() {
                     fontWeight: 700,
                     lineHeight: "12px",
                     color: "#406777"
-                }}>M - National</Text>
+                }}>{data.game}</Text>
             </div>
             <div style={{
                 display: "flex",
@@ -45,7 +45,7 @@ export default function WinningHistoryTableItem() {
                 <Text style={{
                     lineHeight: "12px",
                     color: "#406777"
-                }}>26th Jan, 2021</Text>
+                }}>{data.date}</Text>
             </div>
             <div style={{
                 display: "flex",
@@ -63,7 +63,7 @@ export default function WinningHistoryTableItem() {
                 <Text style={{
                     lineHeight: "12px",
                     color: "#406777"
-                }}>11:12 PM</Text>
+                }}>{data.date}</Text>
             </div>
             <div style={{
                 display: "flex",
@@ -81,7 +81,7 @@ export default function WinningHistoryTableItem() {
                 <Text style={{
                     lineHeight: "12px",
                     color: "#406777"
-                }}>Baba Ijebu</Text>
+                }}>{data.operator}</Text>
             </div>
             <div style={{
                 display: "flex",
@@ -100,7 +100,7 @@ export default function WinningHistoryTableItem() {
                     fontWeight: 700,
                     lineHeight: "12px",
                     color: "#406777"
-                }}>2 . 3 . 22 . 15. 10 </Text>
+                }}>{data.result} </Text>
             </div>
             <div style={{
                 display: "flex",
@@ -119,7 +119,7 @@ export default function WinningHistoryTableItem() {
                     fontWeight: 700,
                     lineHeight: "12px",
                     color: "#406777"
-                }}>2 . 4 . 5 . 6 . 7</Text>
+                }}>{data.optionA}</Text>
             </div>
             <div style={{
                 display: "flex",
@@ -138,7 +138,7 @@ export default function WinningHistoryTableItem() {
                     fontWeight: 700,
                     lineHeight: "12px",
                     color: "#406777"
-                }}>28 . 47 . 54 . 6 .2 7</Text>
+                }}>{data.optionB}</Text>
             </div>
             <div style={{
                 display: "flex",
@@ -157,7 +157,7 @@ export default function WinningHistoryTableItem() {
                     fontWeight: 700,
                     lineHeight: "12px",
                     color: "#406777"
-                }}>12 . 4 . 15 . 6 . 17</Text>
+                }}>{data.optionC}</Text>
             </div>
         </div>
     )
